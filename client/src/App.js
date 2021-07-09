@@ -1,9 +1,11 @@
 import React from 'react'
 
+import { Home } from './page/Home'
+
 function App () {
   return (
     <div>
-      Trabajando con Corebiz
+      <Home />
     </div>
   )
 }
