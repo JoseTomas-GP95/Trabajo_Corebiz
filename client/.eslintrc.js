@@ -17,6 +17,10 @@ module.exports = {
   plugins: [
     'react'
   ],
-  rules: {
-  }
+
+  overrides: [
+    {
+      files: ['*.jsx', '*.js']
+    }
+  ]
 }
