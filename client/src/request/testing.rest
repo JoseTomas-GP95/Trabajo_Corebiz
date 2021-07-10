@@ -1,0 +1,11 @@
+GET https://corebiz-test.herokuapp.com/api/v1/products
+
+###
+POST https://corebiz-test.herokuapp.com/api/v1/newsletter
+content-type: application/json
+
+{
+  "name": "Jose",
+  "email": "test@test.com"
+}
+

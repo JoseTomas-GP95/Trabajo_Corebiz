@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -6,10 +6,19 @@ import 'slick-carousel/slick/slick-theme.css'
 import Container from '@material-ui/core/Container'
 
 /* ------------------------------- COMPONENTS ------------------------------- */
-import { products } from './data'
 import { ProductCard } from './ProductCard'
 
+/* ------------------------------- HELPERS ------------------------------- */
+import { helpGetProducts } from '../../helpers/Products/helpGetProducts'
+
 export const ProductsContainer = () => {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    helpGetProducts()
+      .then(response => setProducts(response))
+  }, [])
+
   const settings = {
     dots: true,
     infinite: true,
