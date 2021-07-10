@@ -17,22 +17,22 @@ export default makeStyles((theme) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
+    // backgroundColor: 'red',
+
     '&:hover': {
       backgroundColor: alpha(theme.palette.common.white, 0.25)
     },
-    marginRight: theme.spacing(2),
     marginLeft: 0,
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto'
+    [theme.breakpoints.up('lg')]: {
+      marginLeft: theme.spacing(1),
+      width: '75%'
     }
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
     height: '100%',
     position: 'absolute',
-    pointerEvents: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
@@ -47,14 +47,15 @@ export default makeStyles((theme) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '20ch'
+      width: '50ch'
     }
   },
   sectionDesktop: {
     display: 'none',
     [theme.breakpoints.up('md')]: {
       display: 'flex'
-    }
+    },
+    marginRight: '8%'
   },
   sectionMobile: {
     display: 'flex',

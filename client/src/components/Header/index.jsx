@@ -4,7 +4,7 @@ import React from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import Container from '@material-ui/core/Container'
+// import Container from '@material-ui/core/Container'
 
 import { data } from './data'
 
@@ -18,17 +18,14 @@ export const Header = () => {
     slidesToScroll: 1
   }
   return (
-    <Container maxWidth="lg">
-        <Slider {...settings}>
-          {
-            data.map(movie => (
-              <div key={ movie.id }>
-                <img alt="imagen" src={ movie.image } />
-              </div>
-            ))
-          }
-
-        </Slider>
-      </Container>
+      <Slider {...settings}>
+        {
+          data.map(movie => (
+            <div key={ movie.id }>
+              <img width={'100%'} alt="imagen" src={ movie.image } />
+            </div>
+          ))
+        }
+      </Slider>
   )
 }
