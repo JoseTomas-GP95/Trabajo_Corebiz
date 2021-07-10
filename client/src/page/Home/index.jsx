@@ -3,6 +3,8 @@ import React from 'react'
 import { Navbar } from '../../components/Navbar'
 import { Header } from '../../components/Header'
 import { ProductsContainer } from '../../components/Products'
+import { Subscription } from '../../components/Subscription'
+import { Footer } from '../../components/Footer'
 
 export const Home = () => {
   return (
@@ -10,9 +12,8 @@ export const Home = () => {
       <Navbar />
       <Header />
       <ProductsContainer />
-      <p>COMPONENTE PRODUCTS</p>
-      <p>COMPONENTE SUBSCRIPTION</p>
-      <p>COMPONENTE FOOTER</p>
+      <Subscription />
+      <Footer />
     </div>
   )
 }
