@@ -1,4 +1,6 @@
 import React from 'react'
+
+/* ------------------------------- MATERIAL UI ------------------------------ */
 import { Typography, AppBar, Toolbar, Container } from '@material-ui/core'
 import useStyles from './css/Footer'
 import GitHubIcon from '@material-ui/icons/GitHub'
@@ -6,12 +8,12 @@ import EmailIcon from '@material-ui/icons/Email'
 import HeadsetMicIcon from '@material-ui/icons/HeadsetMic'
 import Button from '@material-ui/core/Button'
 
+/* --------------------------------- IMAGES --------------------------------- */
 import logoVtex from './image/logo-vtex.png'
 import logoCorebiz from './image/logo-corebiz-global.svg'
 
 export const Footer = () => {
   const classes = useStyles()
-
   return (
     <AppBar position="static" color="primary">
       <Container maxWidth="xs">

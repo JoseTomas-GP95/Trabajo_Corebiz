@@ -1,11 +1,10 @@
 import React from 'react'
+
+/* ---------------------------------- SLICK --------------------------------- */
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-
 import Container from '@material-ui/core/Container'
-
-import './css/Header.css'
 
 import { data } from './data'
 
@@ -18,7 +17,6 @@ export const Header = () => {
     slidesToShow: 1,
     slidesToScroll: 1
   }
-
   return (
     <Container maxWidth="lg">
         <Slider {...settings}>

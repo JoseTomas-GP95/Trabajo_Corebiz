@@ -1,20 +1,12 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+
+/* ------------------------------- MATERIAL UI ------------------------------ */
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch'
-    }
-  }
-}))
+import useStyles from './css/Subscription'
 
 export const Subscription = () => {
   const classes = useStyles()
-
   return (
     <div>
       <h3>¡Únete a nuestras novedades y promociones!</h3>

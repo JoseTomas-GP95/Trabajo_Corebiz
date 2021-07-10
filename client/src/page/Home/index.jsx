@@ -1,5 +1,6 @@
 import React from 'react'
 
+/* ------------------------------- COMPONENTS ------------------------------- */
 import { Navbar } from '../../components/Navbar'
 import { Header } from '../../components/Header'
 import { ProductsContainer } from '../../components/Products'

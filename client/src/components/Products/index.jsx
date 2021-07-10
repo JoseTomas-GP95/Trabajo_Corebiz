@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Container from '@material-ui/core/Container'
 
+/* ------------------------------- COMPONENTS ------------------------------- */
 import { products } from './data'
 import { ProductCard } from './ProductCard'
 
