@@ -67,7 +67,7 @@ export const Navbar = () => {
     </Menu>
   )
   return (
-    <div style={{ width: '80%', marginLeft: '150px' }} className={classes.grow}>
+    <div style={{ width: '70%', marginLeft: '150px' }} className={classes.grow}>
       <AppBar elevation={0} color='transparent' position="static">
         <Toolbar>
           <Typography variant="h6" noWrap>

@@ -9,9 +9,44 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
+import { withStyles, makeStyles } from '@material-ui/core/styles'
+import { Stars } from '../Stars'
+
+const BootstrapButton = withStyles({
+  root: {
+    boxShadow: 'none',
+    textTransform: 'none',
+    fontSize: 16,
+    padding: '6px 12px',
+    border: '1px solid',
+    lineHeight: 1.5,
+    backgroundColor: 'black',
+    borderColor: '#2b2828',
+    fontFamily: ['-apple-system'].join(','),
+    '&:hover': {
+      backgroundColor: '#2b2828'
+    },
+    '&:active': {
+      boxShadow: 'none',
+      backgroundColor: 'black',
+      borderColor: '#2b2828'
+    },
+    '&:focus': {
+      boxShadow: '#2b2828'
+    }
+  }
+})(Button)
+
+const useStyless = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(1)
+  }
+}))
 
 export const ProductCard = ({ item }) => {
   const classes = useStyles()
+  const classess = useStyless()
+
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -21,24 +56,46 @@ export const ProductCard = ({ item }) => {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography
+            align="center"
+            color="textSecondary"
+            variant="body2"
+            component="p"
+          >
             {item.productName}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            calificación: { item.stars }
+          <Typography
+            align="center"
+            variant="body2"
+            color="textSecondary"
+            component="p"
+          >
+            <Stars stars={item.stars} />
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            de: { item.listPrice }
+          <Typography
+            align="center"
+            color="textSecondary"
+            variant="body2"
+            component="p"
+          >
+            de ${item.listPrice}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            por: { item.price }
+          <Typography variant="h5" color="textPrimary" component="p">
+            por $ {item.price}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Comprar
-        </Button>
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+          <BootstrapButton
+            variant="contained"
+            color="primary"
+            disableRipple
+            className={classess.margin}
+          >
+            Comprar
+          </BootstrapButton>
+        </div>
       </CardActions>
     </Card>
   )

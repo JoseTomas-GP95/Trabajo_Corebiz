@@ -24,15 +24,43 @@ export const ProductsContainer = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4
+    slidesToScroll: 4,
+    initialSlide: 0,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   }
 
   return (
-    <Container maxWidth="lg">
-      <h4>Más Vendidos</h4>
+    <Container maxWidth="md">
+      <h3>Más Vendidos</h3>
       <Slider {...settings}>
         {products.map((item) => (
-          <div key={item.productId}>
+          <div style={{ width: 300 }} key={item.productId}>
             <ProductCard item={item} />
           </div>
         ))}
