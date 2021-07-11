@@ -1,12 +1,18 @@
 import { makeStyles } from '@material-ui/core/styles'
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
   footerContainer: {
     width: '97%',
     backgroundColor: 'black',
     display: 'flex',
     justifyContent: 'space-around',
-    alignItems: 'space-around'
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  },
+  footerAddress: {
+    marginLeft: '-4.2rem'
   },
   buttonContainer: {
     display: 'flex',
@@ -19,7 +25,11 @@ export default makeStyles(() => ({
   logosContainer: {
     width: '25%',
     display: 'flex',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      marginBottom: '30px'
+    }
   },
   logoContainer: {
     display: 'flex',

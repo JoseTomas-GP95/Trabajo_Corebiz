@@ -2,10 +2,10 @@ import React from 'react'
 import Rating from '@material-ui/lab/Rating'
 import Box from '@material-ui/core/Box'
 
-export const Stars = ({ stars }) => {
+export const Stars = (props) => {
   return (
-    <Box component="fieldset" mb={-1} borderColor="transparent">
-      <Rating size='small' name="read-only" value={stars} readOnly />
+    <Box mb={-1} borderColor="transparent">
+      <Rating size='small' name="read-only" value={props.stars} readOnly />
     </Box>
   )
 }

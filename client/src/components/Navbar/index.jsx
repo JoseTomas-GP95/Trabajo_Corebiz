@@ -18,7 +18,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 
 import logoCorebiz from './image/Corebiz.png'
 
-export const Navbar = () => {
+export const Navbar = ({ localCount }) => {
   const classes = useStyles()
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
 
@@ -58,7 +58,7 @@ export const Navbar = () => {
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
+          <Badge badgeContent={localCount} color="secondary">
             <ShoppingCartIcon />
           </Badge>
         </IconButton>
@@ -103,7 +103,7 @@ export const Navbar = () => {
               </Typography>
             </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
+              <Badge badgeContent={localCount} color="secondary">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>

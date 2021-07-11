@@ -17,8 +17,8 @@ export const Footer = () => {
     <AppBar position="static" color="primary">
 
         <Toolbar className={classes.footerContainer}>
-          <div>
-            <h3>Ubicación</h3>
+          <div className={classes.footerAddress}>
+            <h2>Ubicación</h2>
             <p>Avenida Andromeda, 2000. Bloco 6 e 8</p>
             <p>Alphavile SP</p>
             <p>brasil@corebiz.ag</p>

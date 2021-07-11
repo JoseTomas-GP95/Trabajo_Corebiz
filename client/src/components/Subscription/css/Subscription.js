@@ -9,9 +9,17 @@ export default makeStyles((theme) => ({
     margin: theme.spacing(2),
     width: '100%',
     display: 'flex',
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      flexDirection: 'column'
+    },
     justifyContent: 'center'
   },
   inputs: {
+    backgroundColor: 'white',
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: '25px'
+    },
     marginRight: '10px'
   }
 }))

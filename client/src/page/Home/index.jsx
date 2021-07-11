@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { Navbar } from '../../components/Navbar'
@@ -8,13 +8,15 @@ import { Subscription } from '../../components/Subscription'
 import { Footer } from '../../components/Footer'
 
 export const Home = () => {
+  const [localCount, setLocalCount] = useState(0)
+
   return (
     <div>
       <div>
-        <Navbar />
+        <Navbar localCount={localCount}/>
       </div>
       <Header />
-      <ProductsContainer />
+      <ProductsContainer setLocalCount={setLocalCount}/>
       <Subscription />
       <Footer />
     </div>

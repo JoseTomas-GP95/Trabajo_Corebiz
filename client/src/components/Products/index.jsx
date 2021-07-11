@@ -4,67 +4,61 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Container from '@material-ui/core/Container'
-
+import CircularProgress from '@material-ui/core/CircularProgress'
 /* ------------------------------- COMPONENTS ------------------------------- */
 import { ProductCard } from './ProductCard'
+import { settings } from './configuration'
 
 /* ------------------------------- HELPERS ------------------------------- */
 import { helpGetProducts } from '../../helpers/Products/helpGetProducts'
 
-export const ProductsContainer = () => {
+export const ProductsContainer = ({ setLocalCount }) => {
   const [products, setProducts] = useState([])
+  const [counter, setCounter] = useState(JSON.parse(localStorage.getItem('counter')) || 0)
+  const [spinner, setSpinner] = useState(false)
+
+  localStorage.setItem('counter', JSON.stringify(counter))
 
   useEffect(() => {
+    console.log('here')
+    setSpinner(true)
     helpGetProducts()
       .then(response => setProducts(response))
   }, [])
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    adaptiveHeight: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 700,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+  useEffect(() => {
+    setLocalCount(counter)
+  }, [counter])
+
+  if (products.length > 0 && spinner) {
+    setSpinner(false)
+  }
+
+  const handleCounter = () => {
+    setCounter(counter + 1)
+    localStorage.setItem('counter', JSON.stringify(counter))
   }
 
   return (
     <Container maxWidth="md">
-      <h3>Más Vendidos</h3>
+      {
+        !spinner
+          ? <>
+        <h3>Más Vendidos</h3>
       <Slider {...settings}>
         {products.map((item) => (
           <div style={{ width: 300 }} key={item.productId}>
-            <ProductCard item={item} />
+            <ProductCard handleCounter={handleCounter} item={item} />
           </div>
         ))}
       </Slider>
+        </>
+          : <div style={{ display: 'flex', justifyContent: 'center', margin: '5rem' }}>
+        <h2>Cargando...</h2>
+        <CircularProgress />
+        </div>
+      }
+
     </Container>
   )
 }

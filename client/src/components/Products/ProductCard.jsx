@@ -39,11 +39,14 @@ const BootstrapButton = withStyles({
 
 const useStyless = makeStyles((theme) => ({
   margin: {
+    [theme.breakpoints.down('xs')]: {
+      padding: '13px 80px'
+    },
     margin: theme.spacing(1)
   }
 }))
 
-export const ProductCard = ({ item }) => {
+export const ProductCard = ({ item, handleCounter }) => {
   const classes = useStyles()
   const classess = useStyless()
 
@@ -92,8 +95,9 @@ export const ProductCard = ({ item }) => {
             color="primary"
             disableRipple
             className={classess.margin}
+            onClick={handleCounter}
           >
-            Comprar
+            COMPRAR
           </BootstrapButton>
         </div>
       </CardActions>
