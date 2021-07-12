@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Proyecto creado con Create React App
+## Script importantes:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para instalar todas las librerias y dependencias, debe estar en la carpeta /client. Use:
+### `npm install`
 
-## Available Scripts
+Una vez instalado correctamente todo, desde la carpeta /client use:
+### `npm start`
 
-In the project directory, you can run:
+Esto hará correr el proyecto
+Correrá en la siguiente dirección: [http://localhost:3000](http://localhost:3000).
 
-### `yarn start`
+Para esté proyecto instalé y configuré Eslint, siguiendo las reglas de estilo de Standard:
+### `npm lint`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Este comando me ayudó en el proceso de desarrollo a respetar las reglas de Standard:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Detalles adicionales 
 
-### `yarn test`
+### Material UI
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ha sido la libreria que seleccioné para la maquetación del proyecto, incluyendo las propiedades con las que puedo lograr responsividad e iconografia 
 
-### `yarn build`
+### React Slick
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Esta libreria permite tener los carouseles de la aplicación
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### React Toastify
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+La utilizo para notificar al cliente que se subscribió correctamente o lo contrario si fuese el caso
+### Fetch
 
-### `yarn eject`
+Todas las peticiones realizadas se hacen con fetch ya que no necesito instalar nada y se utiliza para algo sencillo. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### REST Client
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Si utiliza Visual Studio Code, hay una extensión llamada REST Client que permite hacer pruebas con las rutas y peticiones. Parecido a Postman a menor escala y mucho menos pesado.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Si gustas revisar esto, hay una carpeta /client/request que tiene un archivo con algunas pruebas que realicé para conocer mas la api y testearla.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Solo hace falta tener instalada la extensión e ingresar al archivo testing.rest y tocar en 'Send Request'

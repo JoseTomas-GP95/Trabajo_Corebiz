@@ -1,4 +1,6 @@
 import React from 'react'
+
+/* ------------------------------- MATERIAL UI ------------------------------ */
 import Rating from '@material-ui/lab/Rating'
 import Box from '@material-ui/core/Box'
 

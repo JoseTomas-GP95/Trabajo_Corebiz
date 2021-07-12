@@ -13,6 +13,7 @@ import logoCorebiz from './image/logo-corebiz-global.svg'
 
 export const Footer = () => {
   const classes = useStyles()
+
   return (
     <AppBar position="static" color="primary">
 
@@ -32,7 +33,7 @@ export const Footer = () => {
               className={classes.button}
               startIcon={<EmailIcon />}
             >
-              CONTÁCTANOS
+              <a className={classes.link} target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/josetgp/'>CONTÁCTANOS</a>
             </Button>
 
             <Button
@@ -41,7 +42,7 @@ export const Footer = () => {
               className={classes.button}
               startIcon={<HeadsetMicIcon />}
             >
-              HABLA CON UN CONSULTOR
+              <a className={classes.link} target='_blank' rel='noreferrer' href='https://wa.me/5491150417339'>HABLA CON UN CONSULTOR</a>
             </Button>
           </div>
 

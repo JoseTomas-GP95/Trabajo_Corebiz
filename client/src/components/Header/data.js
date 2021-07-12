@@ -14,5 +14,4 @@ export const data = [
     description: 'foto test',
     image: test2
   }
-
 ]

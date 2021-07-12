@@ -8,6 +8,7 @@ import { Subscription } from '../../components/Subscription'
 import { Footer } from '../../components/Footer'
 
 export const Home = () => {
+  // De esta manera centralizo el state para pasarselo a la navbar y actualizar el numero
   const [localCount, setLocalCount] = useState(0)
 
   return (

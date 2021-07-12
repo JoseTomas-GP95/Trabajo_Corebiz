@@ -34,5 +34,9 @@ export default makeStyles((theme) => ({
   logoContainer: {
     display: 'flex',
     flexDirection: 'column'
+  },
+  link: {
+    textDecoration: 'none',
+    color: 'black'
   }
 }))

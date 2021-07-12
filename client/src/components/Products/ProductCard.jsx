@@ -10,6 +10,8 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { withStyles, makeStyles } from '@material-ui/core/styles'
+
+/* ------------------------------- COMPONENTS ------------------------------ */
 import { Stars } from '../Stars'
 
 const BootstrapButton = withStyles({
@@ -48,7 +50,7 @@ const useStyless = makeStyles((theme) => ({
 
 export const ProductCard = ({ item, handleCounter }) => {
   const classes = useStyles()
-  const classess = useStyless()
+  const classes2 = useStyless()
 
   return (
     <Card className={classes.root}>
@@ -94,7 +96,7 @@ export const ProductCard = ({ item, handleCounter }) => {
             variant="contained"
             color="primary"
             disableRipple
-            className={classess.margin}
+            className={classes2.margin}
             onClick={handleCounter}
           >
             COMPRAR

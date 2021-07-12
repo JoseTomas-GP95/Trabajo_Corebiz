@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { toast } from 'react-toastify'
+
+/* ----------------------------- REACT TOASTIFY ----------------------------- */
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 /* ------------------------------- MATERIAL UI ------------------------------ */
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -48,21 +52,12 @@ export const Subscription = () => {
 
   useEffect(() => {
     if (response.message !== null || response.message !== undefined) {
-      console.log('ENTRA')
-      toast.success('🦄 Wow so easy!')
       if (response.message === 'Created successfully') {
+        toast.success('Tu subscripción ha sido registrada con éxito ✔️')
         setName('')
         setMail('')
-      } else {
-        toast.error('🦄 Wow so easy!', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined
-        })
+      } if (response.status === 'error') {
+        console.log(response.message)
       }
     }
   }, [response])
@@ -77,9 +72,17 @@ export const Subscription = () => {
 
   const onSubmit = (event) => {
     event.preventDefault()
-
-    if (!mail.match(/\S+@\S+\.\S+/)) {
-      console.log('correo no valido')
+    // Validando email y que el nombre no esté vacio o llenado sólo con espacios
+    if (!mail.match(/\S+@\S+\.\S+/) || name.trim().length === 0) {
+      toast.error('Revisa de nuevo tus datos por favor', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
     } else {
       const newsletter = {
         name,
@@ -93,6 +96,8 @@ export const Subscription = () => {
   const classess = useStyless()
   return (
     <div className={classes.container}>
+      <ToastContainer />
+
       <Typography
         align="center"
         variant="h5"
