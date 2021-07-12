@@ -27,7 +27,7 @@ Esta libreria permite tener los carouseles de la aplicación
 
 ### React Toastify
 
-La utilizo para notificar al cliente que se subscribió correctamente o lo contrario si fuese el caso
+La utilizo para notificar al cliente que se suscribió correctamente o lo contrario si fuese el caso
 ### Fetch
 
 Todas las peticiones realizadas se hacen con fetch ya que no necesito instalar nada y se utiliza para algo sencillo. 

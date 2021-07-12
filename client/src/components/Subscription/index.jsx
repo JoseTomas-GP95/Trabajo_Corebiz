@@ -53,7 +53,7 @@ export const Subscription = () => {
   useEffect(() => {
     if (response.message !== null || response.message !== undefined) {
       if (response.message === 'Created successfully') {
-        toast.success('Tu subscripción ha sido registrada con éxito ✔️')
+        toast.success('Tu Suscripción ha sido registrada con éxito ✔️')
         setName('')
         setMail('')
       } if (response.status === 'error') {
